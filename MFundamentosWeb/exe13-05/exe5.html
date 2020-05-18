@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>exe 5</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var nota1;
+            nota1 = prompt("Qual sua nota do primeiro bimestre? ");
+            var nota2;
+            nota2 = prompt("Qual sua nota do segundo bimestre? ");
+            var media;
+            media = (+nota1 + +nota2)/2
+            if((media<10) && (media>9)){
+                document.write(media + " Conceito A");
+            }else if(media<9 && media>7.5){
+                document.write(media + " Conceito B");
+            }else if(media<7.5 && media>6){
+                document.write(media + " Conceito C");
+            }else if(media<6 && media>4){
+                document.write(media + " Conceito D");
+            }else if(media<4){
+                document.write(media + " Conceito E");
+            }else{
+                document.write("Erro!");
+            }
+
+        </script>
+    </body>
+</html>

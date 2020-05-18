@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario</title>
+	<meta charset="utf-8">
+	<style>
+		.contato{
+			padding:10px;
+			flex-wrap:wrap;
+		}
+		.titulo{
+			float:left;
+			padding:5px;
+		}
+		form {
+			background-color:#DDD;
+			width: 900px;
+			margin-left: 200px;
+		}
+		h1{
+			margin-left: 500px;
+		}
+		body{
+			font-family: time new roman, Helvetica, sans-serif;
+		}
+		.botao{
+			padding: 5px;
+			margin: 8px;
+			display: inline;
+		}
+		textarea{
+			display:inline;
+		}
+		
+	</style>
+</head>
+<body>
+	<h1>Modelo de Formulario</h1>
+	<form>
+	<div class="contato">
+		<label>Nome:</label>
+		<input type="text" name="nome" placeholder="Digite o seu nome..." maxlength="150" />
+	</div>
+	<div class="contato">
+		<label>Sobrenome:</label>
+		<input type="text" name="sobrenome" placeholder="Digite o seu sobrenome..." maxlength="150" />
+	</div>
+	<div class="contato">
+		<label>E-mail:</label>
+		<input type="email" name="email" placeholder="Digite o seu E-mail..." maxlength="150"/>
+	</div>
+	<div class="contato">
+		<label>Telefone:</label>
+		<input type="text" name="tel" placeholder="Digite o seu telefone..." maxlength="50" />
+	</div>
+	<div class="contato">
+		<label>Deseja receber informações sobre:</label>
+		<input type="checkbox" name="info" value="noticias">Noticias
+		<input type="checkbox" name="info" value="entretenimento">Entretenimento
+		<input type="checkbox" name="info" value="esportes">Esportes
+		<input type="checkbox" name="info" value="viagens">Viagens
+	</div>
+	<div class="contato">
+		<label>Você acessa portais de noticias?</label>
+		<input type="radio" name="portal" value="sim">Sim
+		<input type="radio" name="portal" value="nao">Não
+	</div>
+	<div class="contato">
+		<label class="titulo">Qual sua área preferida?</label>
+		<select name="area">
+			<option value="humanas">Área de Humanas</option>
+			<option value="exatas">Área de Exatas</option>
+			<option value="saude">Área de Saúde</option>
+		</select>
+	</div>
+	<div class="contato">
+		<label class="titulo">Cor:</label>
+		<input type="color" />
+	</div>
+	<div class="contato">
+		<label class="titulo">Dê uma nota para o formulário:</label>
+		<input type="number" min="0" max="10" />
+	</div>
+	<div class="contato">
+		<label class="titulo">Mensagem</label>
+		<textarea placeholder="Digite sua mensagem..."></textarea>
+		<input type="button" value="Enviar" class="botao" />
+		<input type="reset" value="Apagar" class="botao" />
+	</div>
+	</form>
+</body>
+</html>

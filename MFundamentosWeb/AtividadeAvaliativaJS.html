@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atividade Avaliativa</title>
+        <meta charset="utf-8">
+        <style>
+            body{
+                color:white;
+                background-color:#000;
+            }
+
+            .exercicio{
+                float:left;
+                width:30%;
+                height:100px;
+                margin:10px;
+                padding: 20px;
+                background-color: #1C1C1C;
+                border-radius:10px 20px;
+            }
+        </style>
+    </head>
+    <body>
+       <div class="exercicio">
+           <h1>Exercicio 1</h1>
+           <script>
+               var numero1;
+               numero1 = prompt("Me de um valor: ");
+               var numero2;
+               numero2 = prompt("Me de outro valor: ");
+               function potencia(numero1){
+                   return numero1*numero1
+               }
+               document.write(potencia(numero1));
+               function soma(numero1, numero2){
+                   return (+numero1)+(+numero2)
+               }
+               function multiplicacao(numero1, numero2){
+                   return numero1*numero2
+               }
+               function divisao(numero1, numero2){
+                   soma1 = numero1/numero2
+                   return soma1
+               }
+               function porcentagem(numero1){
+                   return (15*numero1)/100
+               }
+           </script>
+       </div>
+       <div class="exercicio">
+           <h1>Exercicio 2</h1>
+           <script>
+               document.write(soma(numero1, numero2))
+           </script>
+       </div>
+       <div class="exercicio">
+           <h1>Exercicio 3</h1>
+           <script>
+               document.write(multiplicacao(numero1, numero2))
+           </script>
+       </div>
+       <div class="exercicio">
+            <h1>Exercicio 4</h1>
+            <script>
+               if (divisao(numero1,numero2)<50){
+                   document.write("O valor está muito baixo!");
+               }else if((divisao(numero1, numero2)>50)&&(divisao(numero1, numero2)<150)){
+                   document.write("O valor está dentro do esperado!");
+               }else if(divisao(numero1, numero2)>150){
+                   document.write("O valor ultrapassou o limite!");
+               }else{
+                   document.write("Erro!");
+               }
+            </script>
+       </div>
+       <div class="exercicio">
+           <h1>Exercicio 5</h1>
+           <script>
+               document.write("15% de: " + numero1 + " é: "+ porcentagem(numero1))
+           </script>
+       </div>
+       <div class="exercicio">
+           <h1>Exercicio 6</h1>
+           <script>
+               var peso;
+               peso = prompt("Qual seu peso? ");
+               var altura;
+               altura = prompt("Qual sua altura? ");
+               function imc(peso, altura){
+                   calculo = peso/(altura*altura)
+                   return calculo.toFixed(2)
+               }
+               document.write(imc(peso,altura));
+           </script>
+       </div>
+    </body>
+
+</html>
