@@ -1,61 +1,187 @@
-Algoritmo "semnome"
-// Disciplina  :  [Linguagem e Lógica de Programação] 
-// Professor   : Antonio Carlos Nicolodi 
-// Descrição   : Aqui você descreve o que o programa faz! (função)
-// Autor(a)    : Nome do(a) aluno(a)
-// Data atual  : 5/19/2020
+Algoritmo "TecGenius"
+
 Var
-// Seção de Declarações das variáveis 
-respostaMenu, respostaDificuldade, respostaTentar : caractere
-cont, respostaJogo, contPontos : inteiro
-numeroFacil : vetor[1..10] de inteiro
-Inicio
-//menu
-cont <- 0
-escreval("Iniciar Jogo")
-escreval("Ver vencedores")
-leia(respostaMenu)
+resposta, respostaQuantidade, respostaDificuldade: inteiro
+x, y, z: inteiro
+pontos, contador, cont1, cont2: inteiro
+fase, respostaJ: vetor [1..10] de inteiro
+nomeJogador: caracter
+
+procedimento placar
+var
+   respostaP: inteiro
+   vencedor: caracter
+   pontosVencedor: inteiro
+   respostaFinal: inteiro
+inicio
+      limpatela
+      escreval("Placar Atual: ")
+      se pontos > pontosVencedor entao
+         pontosVencedor <- pontos
+         vencedor <- nomeJogador
+      fimse
+      escreval("Sua pontuação é de: ", pontos)
+      escreval("O ", nomeJogador, " é o maior vencedor, com uma pontuação de: ", pontosVencedor)
+      escreval("--------TecGenius--------")
+      escreval("(1) - Menu")
+      escreval("(2) - Fim de jogo")
+      leia(respostaP)
+      escolha respostaP
+      caso 1
+           menu
+      caso 2
+           fimalgoritmo
+      fimescolha
+
+fimprocedimento
+
+procedimento menu
+var
+
+inicio
 limpatela
-escolha respostaMenu
-        caso "iniciar jogo"
-        escreval("Dificuldades:")
-        escreval("   Fácil")
-        escreval("   Médio")
-        escreval("   Dificil")
-        leia(respostaDificuldade)
+escreval("(1) - Iniciar jogo")
+escreval("(2) - Ver pontuações")
+leia(resposta)
+escolha resposta
+        caso 2
+             limpatela
+             placar
+
+        caso 1
         limpatela
-        escolha respostaDificuldade
-        caso "facil"
-        para cont de 1 ate 10 faca
-        contPontos <- 0
-                 aleatorio on
-                 leia(numeroFacil[cont])
-                 timer (500)
-                       limpatela
-                 timer (0)
-                 aleatorio off
-                 leia(respostaJogo)
-                                   timer (200)
-                                   se respostaJogo = numeroFacil[cont] entao
-                                      escreval("Você acertou!")
-                                       cont <- cont + 1
-                                      limpatela
-                                   senao
-                                        escreval("Você errou!")
-                                        escreval("Tentar de volta?(s/n)")
-                                        leia(respostaTentar)
-                                        se respostaTentar = "s" entao
-                                        senao
-                                             interrompa
-                                             escreval("Você acertou ", cont-1)
-                                             escreval("Fim de jogo")
-                                        fimse
-                                   fimse
-                                   timer (0)
-        fimpara
+        escreval("1 jogador")
+        escreval("2 jogadores")
+        leia(respostaQuantidade)
+        escolha respostaQuantidade
+           caso 1
+              limpatela
+              escreval("Nome: ")
+              leia(nomeJogador)
+              limpatela
+              escreval("Dificuldade: ")
+              escreval("(1) - Fácil")
+              escreval("(2) - Médio")
+              escreval("(3) - Difícil")
+              leia(respostaDificuldade)
+              escolha respostaDificuldade
+                      caso 1
+                      limpatela
+                      cont1 <- 1
+                      cont2 <- 1
+
+                      para x de 1 ate 10 faca
+                           aleatorio on
+                           leia(fase[x])
+                           limpatela
+                           aleatorio off
+                      fimpara
+
+                      pontos <- 0
+
+                      para contador de 1 ate 10 faca
+                           escreval("Você terá 2 segundo para decorar, se prepare!")
+                           para x de cont1 ate cont2 faca
+                                escreva(fase[x])
+                           fimpara
+                           timer 3000
+                           timer 0
+                           limpatela
+
+                           para y de cont1 ate cont2 faca
+                           escreva(y, "º valor: ")
+                           leia(respostaJ[y])
+                           fimpara
+                           para z de cont1 ate cont2 faca
+                                se fase[z] = respostaJ[z] entao
+                                senao
+                                placar
+                                timer 5000
+                                timer 0
+                                fimse
+                           fimpara
+                           pontos <- pontos + 1
+                           cont2 <- cont2 + 1
+                      fimpara
+                      escreval("PARABÉNS!!!")
+                      escreval("VOCÊ COMPLETOU O PRIMEIRO NÍVEL!!!")
+                      timer 4000
+                      timer 0
+                      placar
+              fimescolha
         fimescolha
 fimescolha
-                 
-                 
+fimprocedimento
+
+Inicio
+menu
+escolha resposta
+        caso 2
+             limpatela
+             placar
+             
+        caso 1
+        limpatela
+        escreval("1 jogador")
+        escreval("2 jogadores")
+        leia(respostaQuantidade)
+        escolha respostaQuantidade
+           caso 1
+              limpatela
+              escreval("Nome: ")
+              leia(nomeJogador)
+              limpatela
+              escreval("Dificuldade: ")
+              escreval("(1) - Fácil")
+              escreval("(2) - Médio")
+              escreval("(3) - Difícil")
+              leia(respostaDificuldade)
+              escolha respostaDificuldade
+                      caso 1
+                      limpatela
+                      cont1 <- 1
+                      cont2 <- 1
+
+                      para x de 1 ate 10 faca
+                           aleatorio on
+                           leia(fase[x])
+                           limpatela
+                           aleatorio off
+                      fimpara
+
+                      pontos <- 0
+
+                      para contador de 1 ate 2 faca
+                           escreval("Você terá 2 segundo para decorar, se prepare!")
+                           para x de cont1 ate cont2 faca
+                                escreva(fase[x])
+                           fimpara
+                           timer 3000
+                           timer 0
+                           limpatela
+
+                           para y de cont1 ate cont2 faca
+                           escreva(y, "º valor: ")
+                           leia(respostaJ[y])
+                           fimpara
+                           para z de cont1 ate cont2 faca
+                                se fase[z] = respostaJ[z] entao
+                                senao
+                                placar
+                                timer 5000
+                                timer 0
+                                fimse
+                           fimpara
+                           pontos <- pontos + 1
+                           cont2 <- cont2 + 1
+                      fimpara
+                      escreval("PARABÉNS!!!")
+                      escreval("VOCÊ COMPLETOU O PRIMEIRO NÍVEL!!!")
+                      timer 4000
+                      timer 0
+                      placar
+              fimescolha
+        fimescolha
+fimescolha
 
 Fimalgoritmo
