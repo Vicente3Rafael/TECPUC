@@ -1,10 +1,12 @@
 Algoritmo "TecGenius"
+// Disciplina  :  [Linguagem e Lógica de Programação] 
+// Professor   : Antonio Carlos Nicolodi 
 
 Var
 resposta, respostaQuantidade, respostaDificuldade: inteiro
 x, y, z: inteiro
 pontos, contador, cont1, cont2: inteiro
-fase, respostaJ: vetor [1..10] de inteiro
+fase, respostaJ: vetor [1..15] de inteiro
 nomeJogador: caracter
 
 procedimento placar
@@ -114,7 +116,10 @@ fimescolha
 fimprocedimento
 
 Inicio
-menu
+limpatela
+escreval("(1) - Iniciar jogo")
+escreval("(2) - Ver pontuações")
+leia(resposta)
 escolha resposta
         caso 2
              limpatela
@@ -123,7 +128,6 @@ escolha resposta
         caso 1
         limpatela
         escreval("1 jogador")
-        escreval("2 jogadores")
         leia(respostaQuantidade)
         escolha respostaQuantidade
            caso 1
@@ -151,8 +155,52 @@ escolha resposta
 
                       pontos <- 0
 
-                      para contador de 1 ate 2 faca
+                      para contador de 1 ate 10 faca
                            escreval("Você terá 2 segundo para decorar, se prepare!")
+                           para x de cont1 ate cont2 faca
+                                escreva(fase[x])
+                           fimpara
+                           timer 2000
+                           timer 0
+                           limpatela
+
+                           para y de cont1 ate cont2 faca
+                           escreva(y, "º valor: ")
+                           leia(respostaJ[y])
+                           fimpara
+                           para z de cont1 ate cont2 faca
+                                se fase[z] = respostaJ[z] entao
+                                senao
+                                placar
+                                timer 3000
+                                timer 0
+                                fimse
+                           fimpara
+                           pontos <- pontos + 1
+                           cont2 <- cont2 + 1
+                      fimpara
+                      escreval("PARABÉNS!!!")
+                      escreval("VOCÊ COMPLETOU O PRIMEIRO NÍVEL!!!")
+                      timer 4000
+                      timer 0
+                      placar
+                      
+                      caso 2
+                      limpatela
+                      cont1 <- 1
+                      cont2 <- 1
+
+                      para x de 1 ate 15 faca
+                           aleatorio on
+                           leia(fase[x])
+                           limpatela
+                           aleatorio off
+                      fimpara
+
+                      pontos <- 0
+
+                      para contador de 1 ate 15 faca
+                           escreval("Você terá 3 segundo para decorar, se prepare!")
                            para x de cont1 ate cont2 faca
                                 escreva(fase[x])
                            fimpara
@@ -168,7 +216,7 @@ escolha resposta
                                 se fase[z] = respostaJ[z] entao
                                 senao
                                 placar
-                                timer 5000
+                                timer 3000
                                 timer 0
                                 fimse
                            fimpara
@@ -176,10 +224,57 @@ escolha resposta
                            cont2 <- cont2 + 1
                       fimpara
                       escreval("PARABÉNS!!!")
-                      escreval("VOCÊ COMPLETOU O PRIMEIRO NÍVEL!!!")
+                      escreval("VOCÊ COMPLETOU O SEGUNDO NÍVEL!!!")
                       timer 4000
                       timer 0
                       placar
+                      
+                      caso 3
+                      limpatela
+                      cont1 <- 1
+                      cont2 <- 1
+
+                      para x de 1 ate 15 faca
+                           aleatorio on
+                           leia(fase[x])
+                           limpatela
+                           aleatorio off
+                      fimpara
+
+                      pontos <- 0
+
+                      para contador de 1 ate 10 faca
+                           escreval("Você terá 1 segundo para decorar, se prepare!")
+                           para x de cont1 ate cont2 faca
+                                escreva(fase[x])
+                           fimpara
+                           timer 1000
+                           timer 0
+                           limpatela
+
+                           para y de cont1 ate cont2 faca
+                           escreva(y, "º valor: ")
+                           leia(respostaJ[y])
+                           fimpara
+                           para z de cont1 ate cont2 faca
+                                se fase[z] = respostaJ[z] entao
+                                senao
+                                placar
+                                timer 3000
+                                timer 0
+                                fimse
+                           fimpara
+                           pontos <- pontos + 1
+                           cont2 <- cont2 + 1
+                      fimpara
+                      escreval("PARABÉNS!!!")
+                      escreval("VOCÊ COMPLETOU O SEGUNDO NÍVEL!!!")
+                      escreval("VOCÊ É REALMENTE MUITO BOM!!!")
+                      timer 4000
+                      timer 0
+                      placar
+
+                      
               fimescolha
         fimescolha
 fimescolha
